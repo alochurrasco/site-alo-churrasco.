@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#11100e">
+<title>Alô Churrasco | Experiências inesquecíveis</title>
+<meta name="description" content="Alô Churrasco: buffet de churrasco para eventos em Petrópolis e região. Conheça nossos pacotes.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#11100e;
+  --dark:#191713;
+  --gold:#c9a45c;
+  --light-gold:#e6cb91;
+  --cream:#f4efe5;
+  --muted:#b7ad9b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--black);color:var(--cream);
+  font-family:Montserrat,Arial,sans-serif;
+  line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+.container{width:min(1120px,90%);margin:auto}
+.gold{color:var(--gold)}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(17,16,14,.96);
+  border-bottom:1px solid rgba(201,164,92,.25);
+  backdrop-filter:blur(12px);
+}
+.nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:32px;font-weight:700;letter-spacing:1px;
+}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:25px;align-items:center}
+nav a{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#e9dfcc}
+nav a:hover{color:var(--gold)}
+.lang{background:none;border:1px solid #806b45;color:var(--light-gold);padding:8px 10px;cursor:pointer}
+.hero{
+  min-height:590px;display:grid;place-items:center;text-align:center;
+  background:
+  linear-gradient(rgba(10,9,7,.70),rgba(10,9,7,.88)),
+  url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=85") center/cover;
+  border-bottom:1px solid rgba(201,164,92,.25);
+}
+.hero-content{padding:90px 0}
+.eyebrow{color:var(--light-gold);letter-spacing:4px;text-transform:uppercase;font-size:11px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.12}
+h1{font-size:clamp(48px,8vw,88px);max-width:850px;margin:20px auto}
+.hero p{color:#e0d6c5;max-width:620px;margin:0 auto 30px;font-size:15px}
+.btn{
+  display:inline-block;background:var(--gold);color:#17130c;
+  padding:14px 25px;font-size:11px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--gold);
+  transition:.2s;
+}
+.btn:hover{background:transparent;color:var(--light-gold)}
+.btn-outline{background:transparent;color:var(--light-gold)}
+section{padding:85px 0}
+.section-head{text-align:center;margin:0 auto 45px;max-width:700px}
+.section-head h2{font-size:clamp(38px,5vw,56px);margin:12px 0}
+.section-head p{color:var(--muted);font-size:14px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.about-image{
+  min-height:370px;background:
+  linear-gradient(0deg,rgba(0,0,0,.15),rgba(0,0,0,.15)),
+  url("https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1000&q=85") center/cover;
+  border:1px solid rgba(201,164,92,.35)
+}
+.about-copy h2{font-size:48px;margin:10px 0 20px}
+.about-copy p{color:var(--muted);font-size:14px}
+.packages{background:var(--dark)}
+.package-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.package{
+  border:1px solid rgba(201,164,92,.35);
+  background:#14120f;padding:30px;position:relative;
+}
+.package.featured{border-color:var(--gold);box-shadow:0 0 35px rgba(201,164,92,.08)}
+.package h3{font-size:36px;margin:0 0 8px}
+.price{font-family:"Cormorant Garamond",serif;font-size:42px;color:var(--gold)}
+.price small{font-family:Montserrat,sans-serif;font-size:11px;color:var(--muted)}
+.package p{font-size:12px;color:var(--muted)}
+.package ul{padding-left:18px;color:#ddd2bf;font-size:12px}
+.package li{margin:5px 0}
+.package details{border-top:1px solid rgba(201,164,92,.25);margin-top:20px;padding-top:15px}
+.package summary{color:var(--light-gold);cursor:pointer;font-size:12px;font-weight:600;letter-spacing:1px}
+.package details h4{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin:18px 0 5px}
+.package details ul{margin-top:5px}
+.conditions{font-size:11px!important;color:var(--light-gold)!important}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-tile{
+  min-height:210px;border:1px solid rgba(201,164,92,.25);
+  background:linear-gradient(135deg,#29231a,#15120e);
+  display:grid;place-items:center;text-align:center;color:var(--muted);
+  font-size:12px;padding:20px;
+}
+.gallery-tile span{display:block;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:24px}
+.quote{background:var(--dark)}
+.form{
+  max-width:720px;margin:auto;padding:35px;
+  border:1px solid rgba(201,164,92,.35);background:#14120f;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--light-gold)}
+.field input,.field select,.field textarea{
+  background:#201d18;border:1px solid #51432b;color:var(--cream);
+  padding:13px;outline:none;width:100%;
+}
+.field textarea{min-height:110px;resize:vertical}
+.form-note{font-size:11px;color:var(--muted);margin:15px 0}
+.form button{cursor:pointer}
+.contact{text-align:center}
+.contact h2{font-size:48px}
+.contact p{color:var(--muted);font-size:14px}
+footer{border-top:1px solid rgba(201,164,92,.25);padding:30px 0;text-align:center;color:var(--muted);font-size:11px}
+footer strong{color:var(--gold)}
+@media(max-width:720px){
+  .nav{flex-wrap:wrap;padding:12px 0}
+  nav{order:3;width:100%;justify-content:space-between;gap:8px}
+  nav a{font-size:9px}
+  .logo{font-size:28px}
+  .hero{min-height:520px}
+  section{padding:65px 0}
+  .about-grid,.package-grid{grid-template-columns:1fr}
+  .about-image{min-height:250px}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .form{padding:22px}
+}
+@media(max-width:420px){
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .gallery-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#inicio">ALÔ <span>CHURRASCO</span></a>
+    <nav>
+      <a href="#sobre" data-i18n="navAbout">Sobre</a>
+      <a href="#pacotes" data-i18n="navPackages">Pacotes</a>
+      <a href="#galeria" data-i18n="navGallery">Galeria</a>
+      <a href="#orcamento" data-i18n="navQuote">Orçamento</a>
+    </nav>
+    <select class="lang" id="language" aria-label="Idioma">
+      <option value="pt">PT</option>
+      <option value="en">EN</option>
+      <option value="es">ES</option>
+    </select>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="container hero-content">
+    <div class="eyebrow" data-i18n="heroEyebrow">Churrasco • Eventos • Experiências</div>
+    <h1 data-i18n="heroTitle">Momentos especiais merecem um grande churrasco.</h1>
+    <p data-i18n="heroText">Levamos sabor, qualidade e uma equipe preparada para transformar seu evento em uma experiência inesquecível.</p>
+    <a class="btn" href="#pacotes" data-i18n="heroButton">Conheça nossos pacotes</a>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="container about-grid">
+    <div class="about-image" role="img" aria-label="Churrasco preparado na brasa"></div>
+    <div class="about-copy">
+      <div class="eyebrow" data-i18n="aboutEyebrow">Alô Churrasco</div>
+      <h2 data-i18n="aboutTitle">Mais que churrasco. Uma experiência completa.</h2>
+      <p data-i18n="aboutText">Cada evento merece atenção aos detalhes. Oferecemos opções de cardápio, bebidas, utensílios e equipe para que você aproveite cada momento com seus convidados.</p>
+      <a class="btn btn-outline" href="#orcamento" data-i18n="aboutButton">Solicitar orçamento</a>
+    </div>
+  </div>
+</section>
+
+<section class="packages" id="pacotes">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="packagesEyebrow">Nossos cardápios</div>
+      <h2 data-i18n="packagesTitle">Escolha sua experiência</h2>
+      <p data-i18n="packagesText">Opções para diferentes estilos de evento, com serviço completo e muito sabor.</p>
+    </div>
+
+    <div class="package-grid">
+
+      <article class="package">
+        <h3>Pacote Show</h3>
+        <div class="price">R$ 150 <small data-i18n="perPerson">/ pessoa</small></div>
+        <p data-i18n="showIntro">Uma seleção deliciosa para celebrar com qualidade.</p>
+        <p class="conditions">5 horas • Mínimo de 20 pessoas • 5 crianças até 6 anos grátis</p>
+        <details>
+          <summary data-i18n="seeMenu">VER CARDÁPIO COMPLETO</summary>
+          <h4>Entradas e petiscos</h4><ul><li>Pão de alho</li><li>Queijo coalho</li><li>Espetinhos</li><li>Kafta</li></ul>
+          <h4>Carnes</h4><ul><li>Alcatra grill</li><li>Contra filet grill</li><li>Baby beef</li><li>Coração</li><li>Drumet</li><li>Linguiça</li><li>Copalombo</li></ul>
+          <h4>Guarnições</h4><ul><li>Arroz</li><li>Farofa</li><li>Vinagrete</li><li>Maionese / salpicão</li><li>Salada verde</li><li>Feijão de caldo</li><li>Batata calabresa</li></ul>
+          <h4>Bebidas</h4><ul><li>Sucos, água e refrigerantes</li><li>Cervejas: Skol, Brahma e Antártica</li></ul>
+          <h4>Molhos e sobremesa</h4><ul><li>Barbecue, mostarda escura e chimichurri</li><li>Banana na brasa com sorvete</li></ul>
+          <h4>Utensílios e serviço</h4><ul><li>Pratos de louça, talheres inox, copos de vidro, guardanapos, carvão e rechaud</li><li>Assador, garçons, cozinheiros e ajudantes</li></ul>
+        </details>
+        <p class="conditions">Parcelamos em quantas vezes for melhor pra você!</p>
+      </article>
+
+      <article class="package featured">
+        <h3>Pacote TOP</h3>
+        <div class="price">R$ 190 <small data-i18n="perPerson">/ pessoa</small></div>
+        <p data-i18n="topIntro">Mais variedade para deixar sua comemoração ainda mais especial.</p>
+        <p class="conditions">5 horas • Mínimo de 20 pessoas • 8 crianças até 6 anos grátis</p>
+        <details>
+          <summary data-i18n="seeMenu">VER CARDÁPIO COMPLETO</summary>
+          <h4>Entradas e petiscos</h4><ul><li>Pão de alho</li><li>Queijo coalho</li><li>Pasteizinhos</li><li>Espetinhos</li><li>Kafta</li></ul>
+          <h4>Carnes</h4><ul><li>Picanha, ancho e fraldinha</li><li>Baby beef e coração</li><li>Drumet / medalhão de frango</li><li>Linguiças de frango e pernil</li><li>Picanha suína</li></ul>
+          <h4>Guarnições</h4><ul><li>Arroz / arroz à grega</li><li>Farofa especial e vinagrete</li><li>Maionese / salpicão</li><li>Salada verde com palmito</li><li>Feijão de caldo / tropeiro</li><li>Batata calabresa</li></ul>
+          <h4>Open bar</h4><ul><li>Sucos, água e refrigerantes</li><li>Cervejas: Amstel e Heineken</li><li>Caipirinha e caipivodka com Smirnoff</li></ul>
+          <h4>Molhos e sobremesa</h4><ul><li>Chimichurri, mostarda escura, barbecue e tártaro</li><li>Banana e abacaxi na brasa com sorvete</li></ul>
+          <h4>Utensílios e serviço</h4><ul><li>Pratos de louça, talheres inox, copos de vidro, guardanapos, carvão e rechaud</li><li>Assador, garçons, barmans, cozinheiros e ajudantes</li></ul>
+        </details>
+        <p class="conditions">Parcelamos em quantas vezes for melhor pra você!</p>
+      </article>
+
+      <article class="package">
+        <h3>Pacote Super</h3>
+        <div class="price">R$ 230 <small data-i18n="perPerson">/ pessoa</small></div>
+        <p data-i18n="superIntro">Uma experiência ainda mais completa, com opções especiais.</p>
+        <p class="conditions">5 horas • Mínimo de 20 pessoas • 10 crianças até 6 anos grátis</p>
+        <details>
+          <summary data-i18n="seeMenu">VER CARDÁPIO COMPLETO</summary>
+          <h4>Entradas e petiscos</h4><ul><li>Pão de alho e queijo bolinha</li><li>Pasteizinhos de queijo, carne e camarão</li><li>Espetinhos de mignon com vegetais e cia.</li><li>Kafta</li></ul>
+          <h4>Carnes</h4><ul><li>Picanha, filé mignon, chorizo e ancho</li><li>Cupim e coração</li><li>Drumet / medalhão de frango</li><li>Linguiças de frango e pernil</li><li>Costelinha com barbecue</li></ul>
+          <h4>Guarnições</h4><ul><li>Camarão grelhado</li><li>Arroz / arroz à grega / arroz maluco</li><li>Farofa crocante e fritas</li><li>Vinagrete e maionese / salpicão</li><li>Batata calabresa</li><li>Salada verde com palmito</li><li>Kani com manga</li><li>Feijão de caldo / tropeiro</li></ul>
+          <h4>Open bar</h4><ul><li>Refrigerantes, água, mate e sucos</li><li>Cervejas: Amstel, Heineken e Stella Artois</li><li>Caipirinha, caipivodka com Absolut, caipsake e gin</li></ul>
+          <h4>Molhos e sobremesa</h4><ul><li>Barbecue, mostarda escura / Dijon, chimichurri e tártaro</li><li>Banana e abacaxi na brasa com sorvete de passas ao rum</li></ul>
+          <h4>Utensílios e serviço</h4><ul><li>Pratos de louça, talheres inox, copos de vidro, guardanapos, carvão e rechaud</li><li>Assador, garçons, barmans, cozinheiros e ajudantes</li></ul>
+        </details>
+        <p class="conditions">Parcelamos em quantas vezes for melhor pra você!</p>
+      </article>
+
+      <article class="package">
+        <h3>Pacote Premium</h3>
+        <div class="price">R$ 300 <small data-i18n="perPerson">/ pessoa</small></div>
+        <p data-i18n="premiumIntro">Uma seleção especial para eventos que pedem um toque exclusivo.</p>
+        <p class="conditions">5 horas • Mínimo de 20 pessoas • 10 crianças até 6 anos grátis</p>
+        <details>
+          <summary data-i18n="seeMenu">VER CARDÁPIO COMPLETO</summary>
+          <h4>Entradas e petiscos</h4><ul><li>Pão de alho e queijo bolinha</li><li>Pasteizinhos</li><li>Espetinhos gourmet</li><li>Linguiçinha de costela</li></ul>
+          <h4>Carnes</h4><ul><li>Salmão com molho de cogumelos</li><li>Filé mignon e camarão grelhado</li><li>Picanha, bife ancho e fraldinha</li><li>Shoulder steak</li><li>Costelinha pururucada</li><li>Drumet, coração e linguiças</li></ul>
+          <h4>Guarnições</h4><ul><li>Arroz / risoto de camarão</li><li>Aipim frito / fritas</li><li>Banana milanesa e farofa crocante</li><li>Feijão / mini feijoada</li><li>Vinagrete e salada de batatas</li><li>Palmito, kani com manga e salada verde</li></ul>
+          <h4>Sobremesas</h4><ul><li>Profiteroles</li><li>Tiramisù</li></ul>
+          <h4>Open bar</h4><ul><li>Caipirinhas de saquê, Absolut e Sagatiba</li><li>Gin Tanqueray com tônica e cia.</li><li>Coquetéis com e sem álcool, mojito e outros</li><li>Refrigerantes e suco de uva integral</li><li>Água com e sem gás</li><li>Cervejas: Stella e Heineken</li></ul>
+          <h4>Utensílios e serviço</h4><ul><li>Pratos de louça, copos, talheres inox, guardanapos, rechauds e carvão</li><li>Assador, chef, barman, garçons e ajudantes</li></ul>
+        </details>
+        <p class="conditions">Parcelamos em quantas vezes for melhor pra você!</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="galleryEyebrow">Nossos eventos</div>
+      <h2 data-i18n="galleryTitle">Sabor que merece ser lembrado</h2>
+      <p data-i18n="galleryText">Em breve, fotos reais dos nossos churrascos e eventos.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-tile"><div><span>Alô Churrasco</span>Fotos dos eventos</div></div>
+      <div class="gallery-tile"><div><span>Na brasa</span>Nossos cortes especiais</div></div>
+      <div class="gallery-tile"><div><span>Momentos</span>Comemorações especiais</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="orcamento">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="quoteEyebrow">Vamos celebrar?</div>
+      <h2 data-i18n="quoteTitle">Peça seu orçamento</h2>
+      <p data-i18n="quoteText">Conte um pouco sobre seu evento. Nossa equipe poderá preparar uma proposta para você.</p>
+    </div>
+    <form class="form" id="quoteForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="name" data-i18n="nameLabel">Seu nome</label>
+          <input id="name" name="name" required placeholder="Nome completo">
+        </div>
+        <div class="field">
+          <label for="phone" data-i18n="phoneLabel">WhatsApp</label>
+          <input id="phone" name="phone" required placeholder="(00) 00000-0000">
+        </div>
+        <div class="field">
+          <label for="date" data-i18n="dateLabel">Data do evento</label>
+          <input id="date" name="date" type="date">
+        </div>
+        <div class="field">
+          <label for="guests" data-i18n="guestsLabel">Número de convidados</label>
+          <input id="guests" name="guests" type="number" min="1" placeholder="Ex.: 50">
+        </div>
+        <div class="field full">
+          <label for="package" data-i18n="packageLabel">Pacote de interesse</label>
+          <select id="package" name="package">
+            <option value="">Selecione um pacote</option>
+            <option>Pacote Show</option>
+            <option>Pacote TOP</option>
+            <option>Pacote Super</option>
+            <option>Pacote Premium</option>
+            <option>Ainda não decidi</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="message" data-i18n="messageLabel">Conte mais sobre seu evento</label>
+          <textarea id="message" name="message" placeholder="Tipo de evento, local e outras informações..."></textarea>
+        </div>
+        <div class="field full">
+          <button class="btn" type="submit" data-i18n="sendButton">Enviar solicitação</button>
+        </div>
+      </div>
+      <p class="form-note" id="formMessage">O formulário será conectado ao sistema de orçamentos na próxima etapa.</p>
+    </form>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container">
+    <div class="eyebrow" data-i18n="contactEyebrow">Alô Churrasco</div>
+    <h2 data-i18n="contactTitle">Seu evento começa aqui.</h2>
+    <p data-i18n="contactText">Atendimento em Petrópolis e região.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>ALÔ CHURRASCO</strong><br>
+    <span>© <span id="year"></span> Alô Churrasco. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const translations = {
+  pt: {
+    navAbout:"Sobre",navPackages:"Pacotes",navGallery:"Galeria",navQuote:"Orçamento",
+    heroEyebrow:"Churrasco • Eventos • Experiências",
+    heroTitle:"Momentos especiais merecem um grande churrasco.",
+    heroText:"Levamos sabor, qualidade e uma equipe preparada para transformar seu evento em uma experiência inesquecível.",
+    heroButton:"Conheça nossos pacotes",
+    aboutEyebrow:"Alô Churrasco",aboutTitle:"Mais que churrasco. Uma experiência completa.",
+    aboutText:"Cada evento merece atenção aos detalhes. Oferecemos opções de cardápio, bebidas, utensílios e equipe para que você aproveite cada momento com seus convidados.",
+    aboutButton:"Solicitar orçamento",packagesEyebrow:"Nossos cardápios",
+    packagesTitle:"Escolha sua experiência",
+    packagesText:"Opções para diferentes estilos de evento, com serviço completo e muito sabor.",
+    perPerson:"/ pessoa",seeMenu:"VER CARDÁPIO COMPLETO",
+    showIntro:"Uma seleção deliciosa para celebrar com qualidade.",
+    topIntro:"Mais variedade para deixar sua comemoração ainda mais especial.",
+    superIntro:"Uma experiência ainda mais completa, com opções especiais.",
+    premiumIntro:"Uma seleção especial para eventos que pedem um toque exclusivo.",
+    galleryEyebrow:"Nossos eventos",galleryTitle:"Sabor que merece ser lembrado",
+    galleryText:"Em breve, fotos reais dos nossos churrascos e eventos.",
+    quoteEyebrow:"Vamos celebrar?",quoteTitle:"Peça seu orçamento",
+    quoteText:"Conte um pouco sobre seu evento. Nossa equipe poderá preparar uma proposta para você.",
+    nameLabel:"Seu nome",phoneLabel:"WhatsApp",dateLabel:"Data do evento",
+    guestsLabel:"Número de convidados",packageLabel:"Pacote de interesse",
+    messageLabel:"Conte mais sobre seu evento",sendButton:"Enviar solicitação",
+    contactEyebrow:"Alô Churrasco",contactTitle:"Seu evento começa aqui.",
+    contactText:"Atendimento em Petrópolis e região."
+  },
+  en: {
+    navAbout:"About",navPackages:"Packages",navGallery:"Gallery",navQuote:"Quote",
+    heroEyebrow:"Barbecue • Events • Experiences",
+    heroTitle:"Special moments deserve a great barbecue.",
+    heroText:"We bring great flavor, quality and a prepared team to make your event unforgettable.",
+    heroButton:"Explore our packages",
+    aboutEyebrow:"Alô Churrasco",aboutTitle:"More than barbecue. A complete experience.",
+    aboutText:"Every event deserves attention to detail. We offer menus, drinks, equipment and a team so you can enjoy every moment with your guests.",
+    aboutButton:"Request a quote",packagesEyebrow:"Our menus",
+    packagesTitle:"Choose your experience",
+    packagesText:"Options for different event styles, with complete service and great flavor.",
+    perPerson:"/ person",seeMenu:"VIEW FULL MENU",
+    showIntro:"A delicious selection for a great celebration.",
+    topIntro:"More variety to make your celebration even more special.",
+    superIntro:"An even more complete experience, with special options.",
+    premiumIntro:"A special selection for events that call for an exclusive touch.",
+    galleryEyebrow:"Our events",galleryTitle:"Flavor worth remembering",
+    galleryText:"Real photos of our barbecues and events coming soon.",
+    quoteEyebrow:"Let's celebrate?",quoteTitle:"Request a quote",
+    quoteText:"Tell us a little about your event. Our team can prepare a proposal for you.",
+    nameLabel:"Your name",phoneLabel:"WhatsApp",dateLabel:"Event date",
+    guestsLabel:"Number of guests",packageLabel:"Package of interest",
+    messageLabel:"Tell us more about your event",sendButton:"Send request",
+    contactEyebrow:"Alô Churrasco",contactTitle:"Your event starts here.",
+    contactText:"Serving Petrópolis and surrounding areas."
+  },
+  es: {
+    navAbout:"Nosotros",navPackages:"Paquetes",navGallery:"Galería",navQuote:"Presupuesto",
+    heroEyebrow:"Parrilla • Eventos • Experiencias",
+    heroTitle:"Los momentos especiales merecen una gran parrillada.",
+    heroText:"Llevamos sabor, calidad y un equipo preparado para hacer de su evento una experiencia inolvidable.",
+    heroButton:"Conozca nuestros paquetes",
+    aboutEyebrow:"Alô Churrasco",aboutTitle:"Más que parrilla. Una experiencia completa.",
+    aboutText:"Cada evento merece atención a los detalles. Ofrecemos menús, bebidas, utensilios y equipo para que disfrute cada momento con sus invitados.",
+    aboutButton:"Solicitar presupuesto",packagesEyebrow:"Nuestros menús",
+    packagesTitle:"Elija su experiencia",
+    packagesText:"Opciones para diferentes estilos de evento, con servicio completo y mucho sabor.",
+    perPerson:"/ persona",seeMenu:"VER MENÚ COMPLETO",
+    showIntro:"Una deliciosa selección para celebrar con calidad.",
+    topIntro:"Más variedad para hacer su celebración aún más especial.",
+    superIntro:"Una experiencia aún más completa, con opciones especiales.",
+    premiumIntro:"Una selección especial para eventos que buscan un toque exclusivo.",
+    galleryEyebrow:"Nuestros eventos",galleryTitle:"Un sabor para recordar",
+    galleryText:"Próximamente, fotos reales de nuestras parrilladas y eventos.",
+    quoteEyebrow:"¿Vamos a celebrar?",quoteTitle:"Solicite su presupuesto",
+    quoteText:"Cuéntenos un poco sobre su evento. Nuestro equipo puede preparar una propuesta para usted.",
+    nameLabel:"Su nombre",phoneLabel:"WhatsApp",dateLabel:"Fecha del evento",
+    guestsLabel:"Número de invitados",packageLabel:"Paquete de interés",
+    messageLabel:"Cuéntenos más sobre su evento",sendButton:"Enviar solicitud",
+    contactEyebrow:"Alô Churrasco",contactTitle:"Su evento comienza aquí.",
+    contactText:"Atención en Petrópolis y alrededores."
+  }
+};
+
+document.getElementById("language").addEventListener("change", function(){
+  const lang = translations[this.value] ? this.value : "pt";
+  document.documentElement.lang = lang === "en" ? "en" : lang === "es" ? "es" : "pt-BR";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(translations[lang][key]) el.textContent = translations[lang][key];
+  });
+});
+
+document.getElementById("quoteForm").addEventListener("submit", function(event){
+  event.preventDefault();
+  document.getElementById("formMessage").textContent =
+    "Obrigado! O formulário ainda será conectado ao recebimento de orçamentos. Nenhum dado foi enviado.";
+});
+</script>
+</body>
+</html>
