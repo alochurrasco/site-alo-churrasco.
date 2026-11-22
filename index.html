@@ -445,11 +445,27 @@ document.getElementById("language").addEventListener("change", function(){
   });
 });
 
+
 document.getElementById("quoteForm").addEventListener("submit", function(event){
   event.preventDefault();
-  document.getElementById("formMessage").textContent =
-    "Obrigado! O formulário ainda será conectado ao recebimento de orçamentos. Nenhum dado foi enviado.";
+
+  const dados = new FormData(this);
+
+  const mensagem =
+    "Olá! Gostaria de solicitar um orçamento para meu evento.\n\n" +
+    "Nome: " + (dados.get("name") || "") + "\n" +
+    "WhatsApp: " + (dados.get("phone") || "") + "\n" +
+    "Data do evento: " + (dados.get("date") || "Não informada") + "\n" +
+    "Convidados: " + (dados.get("guests") || "Não informado") + "\n" +
+    "Pacote: " + (dados.get("package") || "Não escolhido") + "\n" +
+    "Detalhes: " + (dados.get("message") || "Não informado");
+
+  const link = "https://wa.me/5524988462749?text=" +
+    encodeURIComponent(mensagem);
+
+  window.open(link, "_blank");
 });
+
 </script>
   <!-- Botão WhatsApp -->
 <a href="https://wa.me/5524988462749?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento"
